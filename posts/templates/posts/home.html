@@ -1,0 +1,14 @@
+
+{% load static %}
+<img src="{% static 'images/mountains_bg_aleks-dahlberg.jpg' %}" alt="">
+
+<h1>FMTC</h1>
+
+<h2>latest posts</h2>
+
+{% for post in posts.all %}
+  <img src="{{ post.image.url }}" alt="">
+  <h1>{{post.title}}</h1>
+  <h4>{{post.sub_title}}</h4>
+  <p>{{post.body}}</p>
+{% endfor %}
