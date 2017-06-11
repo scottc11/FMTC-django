@@ -1,0 +1,71 @@
+
+
+body {
+  background-color: rgb(215, 215, 215);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: black;
+  font-family: 'Source Code Pro', monaco, monospace;
+}
+
+/* unvisited link */
+a {
+  color: #92F52F;
+}
+
+.stars {
+  width: 200px;
+}
+
+.white-hr {
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.black-hr {
+  border-color: black;
+}
+
+.heading-background-white {
+  background-color: white;
+}
+
+.color-accent-green {
+  color: #41f966;
+}
+
+.color-accent-peach {
+  color: #12f69c;
+}
+
+.color-accent-electric-blue {
+  color: #87cdff;
+}
+
+.color-accent-orange {
+  color: #6BA833;
+}
+
+.color-accent-yellow {
+  color: #92F52F;
+}
+
+.color-accent-grey {
+  color: #3e3e41;
+}
+
+.color-accent-white {
+  color: white;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}

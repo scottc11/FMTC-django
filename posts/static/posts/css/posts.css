@@ -1,4 +1,120 @@
-.fuck-yea {
-  color: blue;
-  background: yellow;
+
+
+
+/*--------------------------------------*/
+/*        SIDEBARS AND WIDGETS          */
+/*--------------------------------------*/
+
+.sidebar {
+  /*background-color: rgb(113, 113, 113);*/
+}
+
+.sidebar-widget {
+  text-align: right;
+  padding: 10px;
+}
+
+.sidebar-widget div h3 {
+  display: inline-block;
+  /*background-color: black;*/
+  color: black;
+}
+
+.sidebar-widget div ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.sidebar-widget div ul li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+
+}
+
+.sidebar-widget div ul li a {
+  color: black;
+}
+
+.search-input {
+  width: auto;
+  border: none;
+  background-color: #fef1f1;
+  padding: 5px;
+}
+
+.search-submit {
+  width: auto;
+  /*padding: 10px 20px 10px 20px;*/
+
+  border: none;
+  color: black;
+  font-weight: normal;
+  background-color: #92f52f;
+}
+
+.widget_archive ul li {
+  display: inline-block;
+}
+
+.widget_categories ul li {
+  display: inline-block;
+}
+
+/*--------------------------------------*/
+/*              POSTS LOOP                  */
+/*--------------------------------------*/
+
+.post-background {
+  background-color: rgba(145, 145, 145, 1);
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+.post-thumbnail img {
+  max-width: 100%;
+}
+
+/*--------------------------------------*/
+/*              SINGLE POST             */
+/*--------------------------------------*/
+
+/*loading the background image in php file as the thumbnail*/
+.single-post-thumbnail {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*background-attachment: fixed;*/
+}
+
+.single-post-header {
+  margin-top: 20px;
+  background-color: rgb(47, 47, 47);
+  padding: 10px;
+  color: white;
+}
+
+.single-post-details {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.article-background {
+  background-color: rgba(62, 62, 65, 0.75);
+  /*padding: 0;*/
+}
+
+.post-content {
+
+}
+
+.post-content p img {
+  text-align: center;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.5);
 }

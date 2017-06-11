@@ -38,7 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
+    'sidebar',
+    'static_precompiler'
 ]
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'static_precompiler.finders.StaticPrecompilerFinder',
+)
+
+STATIC_PRECOMPILER_COMPILERS = (
+    'static_precompiler.compilers.LESS',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -124,5 +136,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/static/')
 MEDIA_URL = '/images/'
 MEDIA_ROOT = BASE_DIR

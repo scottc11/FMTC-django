@@ -1,0 +1,47 @@
+
+{% load static %}
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FMTC</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'frameworks/bootstrap-3.3.7/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="{% static "posts/css/global.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "sidebar/css/sidebar.css" %}">
+
+    {% block styles %}
+    {% endblock %}
+
+  </head>
+  <body>
+      <div class="content container">
+          <div class="row">
+
+            <div class="col-md-8">
+              {% include 'sidebar/sidebar.html' %}
+            </div>
+
+            <div class="col-md-8">
+              {% block content %}
+              {% endblock %}
+            </div>
+          </div>
+      </div>
+  </body>
+
+  <footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="{% static 'frameworks/bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+  </footer>
+
+</html>
