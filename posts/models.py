@@ -8,6 +8,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='media/')
     thumbnail = models.ImageField(upload_to='media/')
     body = models.TextField()
+    github = models.URLField(max_length=250, default='https://github.com/scottc11')
 
     def __str__(self):
         return self.title

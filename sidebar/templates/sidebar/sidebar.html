@@ -1,7 +1,23 @@
 
 {% load static %}
 
-<div id="main-sidebar" class="">
-  <h1>FMT fuckin C</h1>
-  <h4 class="">From Music To Code</h4>
+<div class="">
+
+  <div class="site-heading-container">
+    <h1 class="site-heading"><a href="{% url 'home' %}">FMTC</a></h1>
+
+    <h3 class="">From Music To Code</h3>
+  </div>
+
+  <hr class="black-hr">
+
+  <div class="recent-posts-container">
+    <h3>Recent Posts</h3>
+    {% for post in recent_posts %}
+      <a href="{% url 'post_detail' post.id %}"><h5 class="recent-posts-title">{{post.title}}</h5></a>
+    {% endfor %}
+
+  </div>
+
+  <img class="stars" src="{% static 'images/mountains_bg_aleks-dahlberg.jpg' %}" alt="">
 </div>

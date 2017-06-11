@@ -1,10 +1,76 @@
+{% extends 'posts/base.html' %}
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static "posts/css/posts.css" %}">
+
+{% block styles %}
+  <link rel="stylesheet" type="text/css" href="{% static "posts/css/posts.css" %}">
+{% endblock %}
+
+
+{% block content %}
+<section class="margin-top-20">
+
+      <!-- article -->
+      <article class="col-xs-12">
+
+        <!-- post thumbnail -->
+          <a href="" title="{{ post.thumbnail.title }}">
+            <div class="single-post-thumbnail" style="background-image: url( {{ post.image.url }} );"></div>
+          </a>
+        <!-- /post thumbnail -->
+
+
+        <!-- post header -->
+        <div class="row">
+
+          <div class="col-xs-12">
+            <div class="single-post-header">
+              <h1>
+                {{ post.title }}
+              </h1>
+
+              <h4>{{ post.sub_title }}</h4>
+
+
+              <span class="date">
+                <time>
+                  {{ post.pub_date }}
+                </time>
+              </span>
+              <span class="author">Author?</span>
+              <span class="comments">comments</span>
+
+            </div>
+
+          </div>
+          <!-- /post title -->
+
+          <hr class="black-hr">
+        </div>
 
 
 
+        <!-- ~~~~~~~~~~~~~~~~~~~ -->
+        <!-- 		THE CONTENT 	   -->
+        <!-- ~~~~~~~~~~~~~~~~~~~ -->
 
-<h1 class="fuck-yea">{{post.title}}</h1>
-<h4>{{post.sub_title}}</h4>
-<p>{{post.body}}</p>
+        <div class="row">
+          <div class="post-content col-xs-12">
+
+            <p>{{ post.body }}</p>
+
+            <h5>Check out the code --> <a href="{{post.github}}" target="_blank">GitHub</a></h5>
+
+            <hr class="black-hr">
+          </div>
+
+
+          <!-- 		COMMENTS 	     -->
+          <div class="col-xs-12">
+            <p>comments</p>
+          </div>
+        </div>
+
+      </article>
+  </section>
+{% endblock %}

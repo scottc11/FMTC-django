@@ -4,7 +4,8 @@ from .models import Post
 # Create your views here.
 def home(request):
     posts = Post.objects.order_by('pub_date')
-    context = { 'posts': posts }
+    recent_posts = Post.objects.all()
+    context = { 'posts': posts, 'recent_posts': recent_posts }
     return render(request, 'posts/home.html', context)
 
 def post_detail(request, post_id):

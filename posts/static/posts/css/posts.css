@@ -1,66 +1,6 @@
 
 
 
-/*--------------------------------------*/
-/*        SIDEBARS AND WIDGETS          */
-/*--------------------------------------*/
-
-.sidebar {
-  /*background-color: rgb(113, 113, 113);*/
-}
-
-.sidebar-widget {
-  text-align: right;
-  padding: 10px;
-}
-
-.sidebar-widget div h3 {
-  display: inline-block;
-  /*background-color: black;*/
-  color: black;
-}
-
-.sidebar-widget div ul {
-  list-style: none;
-  padding: 0;
-
-}
-
-.sidebar-widget div ul li {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-
-}
-
-.sidebar-widget div ul li a {
-  color: black;
-}
-
-.search-input {
-  width: auto;
-  border: none;
-  background-color: #fef1f1;
-  padding: 5px;
-}
-
-.search-submit {
-  width: auto;
-  /*padding: 10px 20px 10px 20px;*/
-
-  border: none;
-  color: black;
-  font-weight: normal;
-  background-color: #92f52f;
-}
-
-.widget_archive ul li {
-  display: inline-block;
-}
-
-.widget_categories ul li {
-  display: inline-block;
-}
 
 /*--------------------------------------*/
 /*              POSTS LOOP                  */
