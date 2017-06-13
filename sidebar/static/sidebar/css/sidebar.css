@@ -18,6 +18,29 @@
 
 
 /*--------------------------------------*/
+/*        SOCIAL ICONS                  */
+/*--------------------------------------*/
+
+.icons-container {
+  margin-top: 20px;
+}
+
+.icons-container ul {
+  list-style: none;
+  text-align: center;
+}
+
+.icons-container ul li {
+  display: inline-block;
+  font-size: 2.5em;
+  padding: 5px;
+  margin: 5px;
+}
+.icons-container ul li a { color: black; }
+.icons-container ul li a:hover { color: #92F52F; }
+
+
+/*--------------------------------------*/
 /*        RECENT POSTS                  */
 /*--------------------------------------*/
 

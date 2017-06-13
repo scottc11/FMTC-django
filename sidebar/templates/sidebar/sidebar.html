@@ -16,8 +16,34 @@
     {% for post in recent_posts %}
       <a href="{% url 'post_detail' post.id %}"><h5 class="recent-posts-title">{{post.title}}</h5></a>
     {% endfor %}
-
   </div>
 
+  <hr class="black-hr">
+
+  <div class="author-info">
+    <div class="icons-container">
+      <ul>
+        <li id="email">
+          <a href=""><span class="fa fa-envelope"></span></a>
+        </li>
+        <li id="youtube">
+          <a href="https://www.youtube.com/channel/UCYqJ-EtqO6gVCPh4aDpckRA" target="_blank"><span class="fa fa-youtube"></span></a>
+        </li>
+        <li id="github">
+          <a href="https://github.com/scottc11" target="_blank"><span class="fa fa-github"></span></a>
+        </li>
+        <li id="twitter">
+          <a href="https://twitter.com/Scott_Camp" target="_blank"><span class="fa fa-twitter"></span></a>
+        </li>
+        <li id="soundcloud">
+          <a href="https://soundcloud.com/scottcamp" target="_blank"><span class="fa fa-soundcloud"></span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="black-hr">
+
   <img class="stars" src="{% static 'images/mountains_bg_aleks-dahlberg.jpg' %}" alt="">
+
 </div>
