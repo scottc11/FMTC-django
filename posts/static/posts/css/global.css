@@ -11,10 +11,9 @@ body {
   font-family: 'Source Code Pro', monaco, monospace;
 }
 
-/* unvisited link */
-a {
-  color: #92F52F;
-}
+
+a { color: black; }
+a:hover { color: #92F52F; }
 
 .stars {
   width: 200px;

@@ -10,10 +10,19 @@
   <h2>latest posts</h2>
 
   {% for post in posts.all %}
-    <img class="" src="{{ post.image.url }}" alt="">
-    <h1>{{post.title}}</h1>
-    <h4>{{post.sub_title}}</h4>
-    <p>{{post.body}}</p>
+    <div class="post-container">
+      <div class="post-thumbnail">
+        <a href="{% url 'post_detail' post.id %}"><img src="{{ post.image.url }}" alt=""></a>
+      </div>
+      <a href="{% url 'post_detail' post.id %}"><h1 class="post-title">{{post.title}}</h1></a>
+      <h4 class="post-sub-title color-accent-orange">{{post.sub_title}}</h4>
+      <h6>{{post.pub_date}}</h6>
+      <div class="post-body">
+        <p>{{post.body}}</p>
+      </div>
+      <h6><a href="{% url 'post_detail' post.id %}">read more...</a></h6>
+      <hr class="black-hr">
+    </div>
   {% endfor %}
 
 {% endblock %}

@@ -1,21 +1,22 @@
-
-
-
-
 /*--------------------------------------*/
-/*              POSTS LOOP                  */
+/*              HOME                    */
 /*--------------------------------------*/
 
-.post-background {
-  background-color: rgba(145, 145, 145, 1);
+.home-container {}
+
+/*--------------------------------------*/
+/*              POSTS LOOP              */
+/*--------------------------------------*/
+
+.post-container {
   padding: 10px;
-  border-radius: 5px;
-  color: black;
 }
 
 .post-thumbnail img {
   max-width: 100%;
 }
+
+.post-title {}
 
 /*--------------------------------------*/
 /*              SINGLE POST             */
@@ -28,7 +29,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /*background-attachment: fixed;*/
 }
 
 .single-post-header {
@@ -41,11 +41,6 @@
 .single-post-details {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.article-background {
-  background-color: rgba(62, 62, 65, 0.75);
-  /*padding: 0;*/
 }
 
 .post-content {

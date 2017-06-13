@@ -2,12 +2,21 @@
 /*        SIDEBAR HEADER                */
 /*--------------------------------------*/
 
+.side-bar {
+  /*position: fixed;*/
+  padding: 10px;
+  /*z-index: 2;*/
+  /*height: 100%;*/
+  /*background: rgb(215, 215, 215);*/
+  /*box-shadow: 15px 0px 48px -3px rgba(194,194,194,0.89);*/
+}
+
 .site-heading-container {
   text-align: center;
 }
 
 .site-heading {
-  font-size: 5em;
+  font-size: 8em;
   margin: 10px 0 10px 0;
   font-family: 'Roboto Mono', monospace;
 }
@@ -27,6 +36,7 @@
 
 .icons-container ul {
   list-style: none;
+  padding: 0;
   text-align: center;
 }
 
