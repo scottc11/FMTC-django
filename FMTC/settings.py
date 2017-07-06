@@ -137,5 +137,6 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/static/')
+STATIC_ROOT = os.path.dirname(BASE_DIR + '/static/')
 MEDIA_URL = '/images/'
 MEDIA_ROOT = BASE_DIR
