@@ -143,8 +143,8 @@ MEDIA_ROOT = BASE_DIR
 
 
 # ----- HEROKU -----
-
-DATABASES['default'] = dj_database_url.config()
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -152,7 +152,7 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 
-# For local development, update DB and stuff -- see local_settings.py 
+# For local development, update DB and stuff -- see local_settings.py
 try:
     from .local_settings import *
 except ImportError:
