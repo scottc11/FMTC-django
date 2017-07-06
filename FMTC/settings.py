@@ -128,14 +128,14 @@ USE_TZ = True
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"), # static folder (not in any apps)
+    os.path.join(BASE_DIR, "assets"), # static folder (not in any apps)
 ]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/static/')
+STATIC_URL = '/assets/'
+STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/assets/')
 STATIC_ROOT = os.path.dirname(BASE_DIR + '/static/')
 MEDIA_URL = '/images/'
 MEDIA_ROOT = BASE_DIR
