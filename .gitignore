@@ -1,10 +1,14 @@
-db.sqlite3
+
 /node_modules
 /media
+staticfiles/
+
 
 # Django
+
+__pycache__
+local_settings.py
 db.sqlite3
-staticfiles/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

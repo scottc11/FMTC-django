@@ -152,6 +152,7 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 
+# For local development, update DB and stuff -- see local_settings.py 
 try:
     from .local_settings import *
 except ImportError:
