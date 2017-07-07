@@ -143,7 +143,7 @@ MEDIA_URL = '/images/'
 MEDIA_ROOT = BASE_DIR
 
 
-if DEVELOPEMENT_MODE:
+if DEVELOPEMENT_MODE is False:
     # ----- HEROKU -----
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
