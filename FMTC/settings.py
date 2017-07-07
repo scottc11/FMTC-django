@@ -83,8 +83,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FMTC.wsgi.application'
 
-DEVELOPEMENT_MODE = True
-print(DEVELOPEMENT_MODE)
+DEVELOPEMENT_MODE = False
+
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
