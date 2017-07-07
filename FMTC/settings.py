@@ -146,6 +146,10 @@ MEDIA_ROOT = BASE_DIR
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+print '---------------------------------------'
+print DATABASES
+print '---------------------------------------'
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['*']
