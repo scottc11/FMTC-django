@@ -5,8 +5,8 @@ class Post(models.Model):
     title = models.CharField(max_length=250)
     sub_title = models.CharField(max_length=500)
     pub_date = models.DateTimeField()
-    image = models.ImageField(upload_to='media/')
-    thumbnail = models.ImageField(upload_to='media/')
+    image = models.ImageField(upload_to='static/media/')
+    thumbnail = models.ImageField(upload_to='static/media/')
     body = models.TextField()
     github = models.URLField(max_length=250, default='https://github.com/scottc11')
 
