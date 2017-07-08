@@ -140,7 +140,7 @@ STATIC_URL = '/assets/'
 STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/assets/')
 STATIC_ROOT = os.path.dirname(BASE_DIR + '/static/')
 MEDIA_URL = '/images/'
-MEDIA_ROOT = BASE_DIR
+MEDIA_ROOT = STATIC_ROOT + 'media/'
 
 
 if DEVELOPEMENT_MODE is False:
