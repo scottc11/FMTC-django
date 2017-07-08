@@ -131,7 +131,6 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"), # static folder (not in any apps)
-    'static',
 ]
 
 # Static files (CSS, JavaScript, Images)
