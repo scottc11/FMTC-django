@@ -131,6 +131,8 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"), # static folder (not in any apps)
+    os.path.join(BASE_DIR, "media"),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 # Static files (CSS, JavaScript, Images)
@@ -148,20 +150,8 @@ if DEVELOPEMENT_MODE is False:
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
 
-    print('---------------------------------------')
-    print(DATABASES)
-    print('---------------------------------------')
-
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     ALLOWED_HOSTS = ['*']
 
     DEBUG = False
-else:
-    pass
-
-# For local development, update DB and stuff -- see local_settings.py
-# try:
-#     from .local_settings import *
-# except ImportError:
-#     pass
