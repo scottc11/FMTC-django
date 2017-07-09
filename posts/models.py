@@ -1,5 +1,5 @@
 from django.db import models
-from FMTC.settings import GOOGLE_APPLICATION_CREDENTIALS
+from FMTC.settings import GOOGLE_APPLICATION_CREDENTIALS, CLOUD_STORAGE_BUCKET
 from google.cloud import storage
 
 credentials = GOOGLE_APPLICATION_CREDENTIALS
