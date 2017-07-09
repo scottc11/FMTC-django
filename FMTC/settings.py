@@ -17,14 +17,12 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '3hb3&d00*4*=8ar^0j$f!d)vfk4eb-uja@dk1j=v)xra!lse-y'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
+DEVELOPEMENT_MODE = True
 
 ALLOWED_HOSTS = []
 
@@ -83,8 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FMTC.wsgi.application'
 
-DEVELOPEMENT_MODE = False
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -137,9 +133,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/assets/'
+MEDIA_URL = '/images/' # used in urls.py
+
 STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/assets/')
 STATIC_ROOT = os.path.dirname(BASE_DIR + '/static/')
-MEDIA_URL = '/images/'
+
 MEDIA_ROOT = STATIC_ROOT + 'media/'
 
 
