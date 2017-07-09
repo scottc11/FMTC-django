@@ -12,13 +12,16 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import dj_database_url
+from YamJam import yamjam
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+CFG = yamjam()['fmtc']
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3hb3&d00*4*=8ar^0j$f!d)vfk4eb-uja@dk1j=v)xra!lse-y'
+# SECRET_KEY = '3hb3&d00*4*=8ar^0j$f!d)vfk4eb-uja@dk1j=v)xra!lse-y'
+SECRET_KEY = CFG['secret_key']
 
 
 DEBUG = True
@@ -127,6 +130,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"), # static folder (not in any apps)
+    os.path.join(BASE_DIR, "node_modules"),
 ]
 
 # Static files (CSS, JavaScript, Images)
@@ -140,6 +144,41 @@ STATIC_ROOT = os.path.dirname(BASE_DIR + '/static/')
 
 MEDIA_ROOT = STATIC_ROOT + 'media/'
 
+
+# ----------------------------------------------------------------------------
+# GOOGLE CLOUD
+# ----------------------------------------------------------------------------
+
+GOOGLE_APPLICATION_CREDENTIALS = CFG['google_cloud_storage']
+
+PROJECT_ID = GOOGLE_APPLICATION_CREDENTIALS['project_id']
+
+CLOUD_STORAGE_BUCKET = 'fmtc'
+
+
+CLOUD_STORAGE_ROOT = "https://storage.googleapis.com/{bucket_name}/".format(
+    bucket_name=CLOUD_STORAGE_BUCKET
+)
+
+MEDIA_PREFIX = "media"
+MEDIA_URL = "{gcs_root}{prefix}/".format(
+    gcs_root=CLOUD_STORAGE_ROOT,
+    prefix=MEDIA_PREFIX,
+)
+
+DEFAULT_FILE_STORAGE = 'google.storage.googleCloud.GoogleCloudStorage'
+print(' ')
+print('-----------------------------')
+print(CLOUD_STORAGE_ROOT)
+print(MEDIA_URL)
+print(PROJECT_ID)
+
+
+
+
+# ----------------------------------------------------------------------------
+# PRODUCTION ENV SETTINGS
+# ----------------------------------------------------------------------------
 
 if DEVELOPEMENT_MODE is False:
     # ----- HEROKU -----

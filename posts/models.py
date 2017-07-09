@@ -1,4 +1,10 @@
 from django.db import models
+from FMTC.settings import GOOGLE_APPLICATION_CREDENTIALS
+from google.cloud import storage
+
+credentials = GOOGLE_APPLICATION_CREDENTIALS
+storage_client = storage.Client(project=credentials['project_id'])
+
 
 # Create your models here.
 class Post(models.Model):
