@@ -142,7 +142,7 @@ MEDIA_URL = '/images/' # used in urls.py
 STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/assets/')
 STATIC_ROOT = os.path.dirname(BASE_DIR + '/static/')
 
-MEDIA_ROOT = STATIC_ROOT + 'media/'
+MEDIA_ROOT = 'fmtc/'
 
 
 # ----------------------------------------------------------------------------
@@ -160,18 +160,16 @@ CLOUD_STORAGE_ROOT = "https://storage.googleapis.com/{bucket_name}/".format(
     bucket_name=CLOUD_STORAGE_BUCKET
 )
 
-MEDIA_PREFIX = "media"
+MEDIA_PREFIX = "media/"
 MEDIA_URL = "{gcs_root}{prefix}/".format(
     gcs_root=CLOUD_STORAGE_ROOT,
     prefix=MEDIA_PREFIX,
 )
 
 DEFAULT_FILE_STORAGE = 'google.storage.googleCloud.GoogleCloudStorage'
-print(' ')
+
 print('-----------------------------')
-print(CLOUD_STORAGE_ROOT)
-print(MEDIA_URL)
-print(PROJECT_ID)
+
 
 
 
