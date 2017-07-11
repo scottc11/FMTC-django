@@ -15,6 +15,8 @@ class GoogleCloudStorage(Storage):
         self.storage_location = settings.MEDIA_PREFIX
 
     def _open(self, name, mode='rb'):
+        print('------------------')
+        print('in open')
         filepath = self.storage_location + name # ex. 'media/filename.png'
         if self.storage_location in name:
             filepath = name
@@ -23,7 +25,6 @@ class GoogleCloudStorage(Storage):
             temp_file = tempfile.TemporaryFile()
             blob.download_to_file(temp_file)
             return File(temp_file)
-
 
     def _save(self, name, file_obj):
         filepath = self.storage_location + name
@@ -34,6 +35,13 @@ class GoogleCloudStorage(Storage):
             print(err)
         return filepath
 
+    def delete(self, name):
+        filename = self.storage_location + name
+        if self.storage_location in name:
+            filename = name
+        if self.exists(name):
+            blob = self.bucket.get_blob(filename)
+            blob.delete()
 
     def exists(self, name):
         filename = self.storage_location + name
@@ -41,7 +49,6 @@ class GoogleCloudStorage(Storage):
             filename = name
         exists = self.bucket.blob(filename).exists()
         return exists
-
 
     def url(self, name):
         filename = self.storage_location + name
