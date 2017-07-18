@@ -16,7 +16,7 @@ from YamJam import yamjam
 is_prod = False
 if 'TEST' is os.environ:
     print('----------------------')
-    print('On HEROKU)
+    print('On HEROKU')
     print('----------------------')
 else:
     print('----------------------')
