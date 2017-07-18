@@ -14,7 +14,7 @@ import os
 import dj_database_url
 from YamJam import yamjam
 is_prod = False
-if 'TEST' is os.environ:
+if 'TEST' in os.environ:
     print('----------------------')
     print('On HEROKU')
     print('----------------------')
