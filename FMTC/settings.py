@@ -15,7 +15,13 @@ import dj_database_url
 from YamJam import yamjam
 is_prod = os.environ.get('IS_HEROKU', None)
 if is_prod:
-    print(is_prod)
+    print('----------------------')
+    print('PROD:',is_prod)
+    print('----------------------')
+else:
+    print('----------------------')
+    print('not in prod')
+    print('----------------------')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
