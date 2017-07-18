@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 from YamJam import yamjam
-is_prod = os.environ.get('IS_HEROKU', None)
+is_prod = os.environ.get('ON_HEROKU', None)
 if is_prod:
     print('----------------------')
     print('PROD:',is_prod)
