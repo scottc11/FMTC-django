@@ -31,8 +31,8 @@ if 'PROD' in os.environ:
     print('============= on HEROKU enviroment ==============')
     DEBUG = False
     print('')
-    print(SECRET_KEY)
-    print(PROD)
+    print(os.environ['SECRET_KEY'])
+    print(os.environ['PROD'])
     print('---------')
 else:
     print('============= on DEV enviroment ================')
