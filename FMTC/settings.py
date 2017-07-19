@@ -31,11 +31,11 @@ if 'PROD' in os.environ:
     print('============= on HEROKU enviroment ==============')
     DEBUG = False
     GOOGLE_APPLICATION_CREDENTIALS = {
-        "client_id": os.envoron['GC_CLIENT_ID'],
-        "client_secret": os.envoron['GC_CLIENT_SECRET'],
-        "refresh_token": os.envoron['GC_REFRESH_TOKEN'],
-        "type": os.envoron['GC_TYPE'],
-        "project_id": os.envoron['GC_PROJECT_ID']
+        "client_id": os.environ['GC_CLIENT_ID'],
+        "client_secret": os.environ['GC_CLIENT_SECRET'],
+        "refresh_token": os.environ['GC_REFRESH_TOKEN'],
+        "type": os.environ['GC_TYPE'],
+        "project_id": os.environ['GC_PROJECT_ID']
     }
 else:
     print('============= on DEV enviroment ================')
