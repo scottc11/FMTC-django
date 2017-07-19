@@ -29,11 +29,3 @@ class Post(models.Model):
 
     def summary(self):
         return self.body[:100]
-
-
-
-
-
-
-
-# structure = models.FileField(blank=True, default="", upload_to=get_path, storage=GoogleCloudStorage(), validators=[file_size])

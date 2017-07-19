@@ -30,16 +30,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if 'PROD' in os.environ:
     print('============= on HEROKU enviroment ==============')
     DEBUG = False
-    print('')
-    print(os.environ['SECRET_KEY'])
-    print(os.environ['PROD'])
-    print('---------')
+    GOOGLE_APPLICATION_CREDENTIALS = {
+        "client_id": os.envoron['GC_CLIENT_ID'],
+        "client_secret": os.envoron['GC_CLIENT_SECRET'],
+        "refresh_token": os.envoron['GC_REFRESH_TOKEN'],
+        "type": os.envoron['GC_TYPE'],
+        "project_id": os.envoron['GC_PROJECT_ID']
+    }
 else:
     print('============= on DEV enviroment ================')
     CFG = yamjam()['fmtc']
     DEBUG = True
     SECRET_KEY = CFG['secret_key']
-
+    GOOGLE_APPLICATION_CREDENTIALS = CFG['google_cloud_storage']
 
 ALLOWED_HOSTS = []
 
@@ -151,11 +154,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/assets/'
-MEDIA_URL = '/images/' # used in urls.py
-
-STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/assets/')
 STATIC_ROOT = os.path.dirname(BASE_DIR + '/static/')
 
+STATIC_PRECOMPILER_ROOT = os.path.dirname(BASE_DIR + '/assets/')
+
+
+MEDIA_URL = '/images/' # used in urls.py
 MEDIA_ROOT = 'fmtc/'
 
 
@@ -163,7 +167,7 @@ MEDIA_ROOT = 'fmtc/'
 # GOOGLE CLOUD
 # ----------------------------------------------------------------------------
 
-GOOGLE_APPLICATION_CREDENTIALS = CFG['google_cloud_storage']
+
 
 PROJECT_ID = GOOGLE_APPLICATION_CREDENTIALS['project_id']
 
