@@ -13,28 +13,32 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 from YamJam import yamjam
-is_prod = False
-if 'TEST' in os.environ:
-    print('----------------------')
-    print('On HEROKU')
-    print('----------------------')
-else:
-    print('----------------------')
-    print('not in prod')
-    print('----------------------')
+
+
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-CFG = yamjam()['fmtc']
+
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '3hb3&d00*4*=8ar^0j$f!d)vfk4eb-uja@dk1j=v)xra!lse-y'
-SECRET_KEY = CFG['secret_key']
 
 
-DEBUG = True
-DEVELOPEMENT_MODE = True
+if 'TEST' in os.environ:
+    print('============= on HEROKU enviroment ==============')
+    DEBUG = False
+    print('')
+    print(SECRET_KEY)
+    print('---------')
+else:
+    print('============= on DEV enviroment ================')
+    CFG = yamjam()['fmtc']
+    DEBUG = True
+    SECRET_KEY = CFG['secret_key']
+
 
 ALLOWED_HOSTS = []
 
@@ -177,8 +181,6 @@ MEDIA_URL = "{gcs_root}{prefix}/".format(
 
 DEFAULT_FILE_STORAGE = 'google.storage.googleCloud.GoogleCloudStorage'
 
-print('-----------------------------')
-
 
 
 
@@ -187,7 +189,7 @@ print('-----------------------------')
 # PRODUCTION ENV SETTINGS
 # ----------------------------------------------------------------------------
 
-if DEVELOPEMENT_MODE is False:
+if DEBUG is False:
     # ----- HEROKU -----
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
@@ -195,5 +197,3 @@ if DEVELOPEMENT_MODE is False:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     ALLOWED_HOSTS = ['*']
-
-    DEBUG = False
