@@ -27,11 +27,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = '3hb3&d00*4*=8ar^0j$f!d)vfk4eb-uja@dk1j=v)xra!lse-y'
 
 
-if 'TEST' in os.environ:
+if 'PROD' in os.environ:
     print('============= on HEROKU enviroment ==============')
     DEBUG = False
     print('')
     print(SECRET_KEY)
+    print(PROD)
     print('---------')
 else:
     print('============= on DEV enviroment ================')
