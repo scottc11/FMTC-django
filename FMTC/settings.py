@@ -30,6 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if 'PROD' in os.environ:
     print('============= on HEROKU enviroment ==============')
     DEBUG = False
+    SECRET_KEY = os.environ['SECRET_KEY']
     GOOGLE_APPLICATION_CREDENTIALS = {
         "client_id": os.environ['GC_CLIENT_ID'],
         "client_secret": os.environ['GC_CLIENT_SECRET'],
