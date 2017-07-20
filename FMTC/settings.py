@@ -38,7 +38,7 @@ if 'PROD' in os.environ:
         "type": os.environ['GC_TYPE'],
         "project_id": os.environ['GC_PROJECT_ID']
     }
-    print(GOOGLE_APPLICATION_CREDENTIALS['project_id'])
+    print(GOOGLE_APPLICATION_CREDENTIALS)
 else:
     print('============= on DEV enviroment ================')
     CFG = yamjam()['fmtc']
