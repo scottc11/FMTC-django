@@ -36,7 +36,15 @@ if 'PROD' in os.environ:
         "client_secret": os.environ['GC_CLIENT_SECRET'],
         "refresh_token": os.environ['GC_REFRESH_TOKEN'],
         "type": os.environ['GC_TYPE'],
-        "project_id": os.environ['GC_PROJECT_ID']
+        "project_id": os.environ['GC_PROJECT_ID'],
+        "private_key_id": os.environ['GC_PRIVATE_KEY_ID'],
+        "private_key": os.environ['GC_PRIVATE_KEY'],
+        "client_email": os.environ['GC_CLIENT_EMAIL'],
+        "auth_uri": os.environ['GC_AUTH_URI'],
+        "token_uri": os.environ['GC_TOKEN_URI'],
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fmtc-498%40fmtc-173220.iam.gserviceaccount.com"
+
     }
     print(GOOGLE_APPLICATION_CREDENTIALS)
 else:
